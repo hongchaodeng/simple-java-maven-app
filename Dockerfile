@@ -1,5 +1,5 @@
 # First stage: complete build environment
-FROM maven:3.5.0-jdk-8-alpine AS builder
+FROM acr-dadi-registry-vpc.cn-hangzhou.cr.aliyuncs.com/dadi-test/maven:3.5.0-jdk-8-alpine AS builder
 
 # add pom.xml and source code
 ADD ./pom.xml pom.xml
@@ -9,7 +9,7 @@ ADD ./src src/
 RUN mvn clean package
 
 # Second stage: minimal runtime environment
-From openjdk:8-jre-alpine
+From acr-dadi-registry-vpc.cn-hangzhou.cr.aliyuncs.com/dadi-test/openjdk:8-jre-alpine
 
 # copy jar from the first stage
 COPY --from=builder target/my-app-1.0-SNAPSHOT.jar my-app-1.0-SNAPSHOT.jar

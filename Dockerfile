@@ -9,8 +9,7 @@ ADD ./src src/
 RUN mvn clean package
 
 # Second stage: minimal runtime environment
-# From openjdk:8-jre-alpine
-FROM nginx:latest
+From openjdk:8-jre-alpine
 
 # copy jar from the first stage
 COPY --from=builder target/my-app-1.0-SNAPSHOT.jar my-app-1.0-SNAPSHOT.jar

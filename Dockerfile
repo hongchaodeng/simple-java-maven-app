@@ -8,6 +8,7 @@ ADD ./src src/
 # package jar
 RUN mvn clean package
 
+
 # Second stage: minimal runtime environment
 From openjdk:8-jre-alpine
 

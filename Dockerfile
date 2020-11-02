@@ -8,7 +8,7 @@ ADD ./src src/
 # package jar
 RUN mvn clean package
 
-From openjdk:8-jre-alpine
+From openjdk:8
 
 # copy jar from the first stage
 

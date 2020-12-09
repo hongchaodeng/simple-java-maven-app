@@ -11,7 +11,6 @@ RUN mvn clean package
 From openjdk:8
 
 # copy jar from the first stage
-
 COPY --from=builder target/my-app-1.0-SNAPSHOT.jar my-app-1.0-SNAPSHOT.jar
 EXPOSE 8080
 CMD ["java", "-jar", "my-app-1.0-SNAPSHOT.jar"]

@@ -6,7 +6,8 @@ ADD ./pom.xml pom.xml
 ADD ./src src/
 
 # package jar
-RUN mvn clean package
+RUN mvn install -Dmaven.test.skip=true
+
 From openjdk:8
 
 # copy jar from the first stage

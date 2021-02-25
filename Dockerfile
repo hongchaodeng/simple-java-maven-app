@@ -1,12 +1,15 @@
 # First stage: complete build environment
 FROM maven:3.5.0-jdk-8-alpine AS builder
 
-# add pom.xml and source code
+# add pom.xml
 ADD ./pom.xml pom.xml
+RUN mvn -B -f pom.xml dependency:go-offline
+
+# add source
 ADD ./src src/
 
 # package jar
-RUN mvn install -Dmaven.test.skip=true
+RUN mvn -B install -Dmaven.test.skip=true
 
 From openjdk:8
 

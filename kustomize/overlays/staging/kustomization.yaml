@@ -1,0 +1,7 @@
+namePrefix: staging-
+commonLabels:
+  tier: staging
+bases:
+  - ../../base
+patchesStrategicMerge:
+  - deployment.yaml

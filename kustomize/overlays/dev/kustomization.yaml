@@ -1,6 +1,6 @@
-namePrefix: staging-
+namePrefix: dev-
 commonLabels:
-  tier: staging
+  tier: dev
 bases:
   - ../../base
 patchesStrategicMerge:

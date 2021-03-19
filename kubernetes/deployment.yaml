@@ -14,12 +14,12 @@ spec:
         app: simple-java-maven-app
       annotations:
         armsPilotAutoEnable: "on"
-        armsPilotCreateAppName: simple-java-maven-app
+        armsPilotCreateAppName: "your-app-name"
         ahasPilotAutoEnable: "on"
-        ahasAppName: "K8sFooTest"
+        ahasAppName: "your-app-name"
         ahasNamespace: "default"
-        msePilotAutoEnable: 'on'
-        msePilotCreateAppName: productserivce
+        msePilotAutoEnable: "on"
+        msePilotCreateAppName: "your-app-name"
     spec:
       containers:
       - name: java-app
